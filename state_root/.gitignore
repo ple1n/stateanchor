@@ -2,4 +2,4 @@
 Cargo.lock
 methods/guest/Cargo.lock
 target/
-**/build/**
+contracts/ping/build/freenet/

@@ -1,9 +1,9 @@
 
-# StateAnchor
+# State*Anchor*
 
-Lightweight blockchain built upon recursive STARK proofs that is not nosiy.
+Lightweight post-quantum blockchain built upon recursive STARK proofs that is not nosiy.
 
-Like [Mina](https://docs.minaprotocol.com/mina-protocol), but written in ZKVM and quantum-proof.
+Like [Mina](https://docs.minaprotocol.com/mina-protocol), it produces a constant-sized proof, but written in ZKVM and quantum-proof.
 
 The chain is transport agnostic. It's written as a state machine running on [Freenet](https://github.com/freenet/freenet-core/). 
 
@@ -13,3 +13,30 @@ The voting majority will eventually produce the longest chain, where the forks, 
 
 For assets backed by contracts on other chains, the transfer is trustless, through a ZK proof of *excessive forking*.
 
+## Fully private and succint
+
+We name it _StateAnchor_, because it does not intend to serve data. Rather, it serves as an anchor of data. The chain presents itself as a perpetually updating state root hash, with a recursive STARK proof that itself proves the entire chain state trustlessly. 
+
+Miners transmit minimal data to keep the chain working. Succintness is the goal, while being private is almost a side product.
+
+## Currency, redefined
+
+Is currency just money, or more or less a representation of reputation in a community. 
+
+We don't charge flat fees for transactions and contract creation. The limited resources are supposed to serve the community. No more transaction spam. 
+
+## Interop, not compete
+
+We don't intend to be the next 'winner chain'. Smaller chains can peg stakes onto mature chains to harden consensus. Assets can be transferred easily thanks to contracts and ZK state proofs.
+
+## Minimal, to serve Web3
+
+The chain is designed from ground-up to serve the needs for daily internet protocols such as apps that run on Freenet. 
+
+### Offline-first consensus
+
+The economic protocol is designed such that, a single state proof including only one branch is enough to attest to the validity of consensus, because if you can provide a _proof of excessive forking_, you can slash funds. 
+
+This can be incredibly useful for real world applications. We don't want users to be constantly syncing from the network, even if its a fixed size proof. 
+
+see more in [draft](./spec.typ)
